@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Đặt vé máy bay nhanh</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&amp;subset=vietnamese"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="vemb.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="jquery-ui-1.13.2/jquery-ui.min.css">
+    <link rel="stylesheet" href="select2-4.1.0-rc.0/select2-4.1.0-rc.0/dist/css/select2.min.css">
+    <script text="" src="jquery/jquery-3.6.1.min.js"></script>
+
+</head>
+
+<body>
+    <div id="ve_may_bay" class=" container-fluid">
+
+        <div class="title-pane hidden-xs">
+            <span class="text-tab" id="vemaybay">
+                <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                <span id="vmd">Vé Máy Bay</span>
+            </span>
+            <span class="text-tab" id="baohiem">
+                <i class="fa fa-indent" aria-hidden="true"></i>
+                <span id="bh">Bảo Hiểm</span>
+            </span>
+        </div>
+        <div id="form-ve">
+            <div id="datvere">
+                Đặt vé giá rẻ chỉ với ba bước đơn giản
+            </div>
+            <div id="datbaohiem">
+                Vui lòng nhập thông tin sau
+            </div>
+
+            <div class="row tab-menu container " id="content-vemaybay">
+                <!-- Collumn 1 -->
+                <div class="col-12 col-md-4 col-lg-4 thrtab tab1 container">
+                    <div class="title-search">
+                        <span class="text-t"><b class="fs32">1.</b>Hành trình bay</span>
+                    </div>
+
+                    <div class="search-content">
+                        <!-- Điểm đi -->
+                        <div class="box-diem go-flight ">
+                            <div class="box-btn row" id="chondiemdi">
+                                <i class="fa fa-plane go-away col-2 col-lg-2" aria-hidden="true"></i>
+                                <div class="col-10 col-lg-10 row">
+                                    <span class="label-control col-lg-12">Điểm đi</span>
+
+                                    <button class="btn btn-place bt-diem-di col-lg-12" id="txp"><span id="text-xp"
+                                            class="txt-ellipse" data-code="HAN" code="HAN" value="">Ha Noi (HAN)
+                                        </span></button>
+                                </div>
+                            </div>
+                            <!-- Box Hidden -->
+                            <div class="box-select-option container" id="diemxp">
+                                <div class=" title hidden-ss">
+                                    <div class="icon-ic"><i class="fa fa-times x-mb" id="x-mobi"></i></div>
+                                    <div class="menu-mb"><b class="tt">Chọn điểm đi</b></div>
+
+                                </div>
+                                <div class="row title hidden-xx ">
+                                    <div class="text-text col-12 col-md-10">Lựa chọn thành phố hoặc sân bay xuất phát
+                                    </div>
+                                    <button class="btn col-12 col-md-2  close1">
+                                        <i id="close-back1" class="fa fa-times hidden-xs icon-xmin"></i>
+                                    </button>
+                                </div>
+                                <div class="div-in-search">
+                                    <div class="div-input-search ui-widget">
+                                        <i class="fa fa-search icon-s" aria-hidden="true"></i>
+                                        <i class="fa fa-times iconX" id="X-o"></i>
+                                        <label for="tags"></label>
+                                        <input type="text" placeholder="Nhập tên thành phố hoặc mã sân bay"
+                                            class="form-control typeahead" id="city-go" value="">
+                                        <button class="btn hidden-xs btn-choice-area" id="chonxp">CHỌN</button>
+                                    </div>
+
+                                </div>
+                                <div class="container" style="padding: 0%;">
+                                    <div class="row scroll-touch" style="margin: 0;">
+                                        <div class="col-12 col-sm-2 col-md-2" style="padding-left: 20px;">
+                                            <h3>MIỀN BẮC</h3>
+                                            <ul class="ull">
+                                                <li class="item-diem-xp" data-code="HAN">Hà Nội</li>
+                                                <li class="item-diem-xp" data-code="HPH">Hải Phòng</li>
+                                                <li class="item-diem-xp" data-code="DIN">Điện Biên Phủ</li>
+                                                <li class="item-diem-xp" data-code="VDO">Vân Đồn</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-sm-2 col-md-2" style="padding-left: 20px;">
+                                            <h3>MIỀN NAM</h3>
+                                            <ul class="ull">
+                                                <li class="item-diem-xp" data-code="SGN">Hồ Chí Minh</li>
+                                                <li class="item-diem-xp" data-code="PQC">Phú Quốc</li>
+                                                <li class="item-diem-xp" data-code="CAH">Cà Mau</li>
+                                                <li class="item-diem-xp" data-code="VCA">Cần Thơ</li>
+                                                <li class="item-diem-xp" data-code="VCS">Côn Đảo</li>
+                                                <li class="item-diem-xp" data-code="VKG">Kiên Giang</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-sm-2 col-md-2" style="padding-left: 20px;">
+                                            <h3>MIỀN TRUNG</h3>
+                                            <ul class="ull">
+
+                                                <li class="item-diem-xp" data-code="DAD">Đà Nẵng</li>
+                                                <li class="item-diem-xp" data-code="CXR">Nha Trang</li>
+                                                <li class="item-diem-xp" data-code="DLI">Đà Lạt</li>
+                                                <li class="item-diem-xp" data-code="HUI">Huế</li>
+                                                <li class="item-diem-xp" data-code="BMV">Ban Mê Thuột</li>
+                                                <li class="item-diem-xp" data-code="PXU">PleiKu</li>
+                                                <li class="item-diem-xp" data-code="TBB">Phú Yên</li>
+                                                <li class="item-diem-xp" data-code="THD">Thanh Hóa</li>
+                                                <li class="item-diem-xp" data-code="UIH">Qui Nhơn</li>
+                                                <li class="item-diem-xp" data-code="VCL">Chu Lai</li>
+                                                <li class="item-diem-xp" data-code="VDH">Quảng Bình</li>
+                                                <li class="item-diem-xp" data-code="VII">Vinh</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-sm-2 col-md-2" style="padding-left: 20px;">
+                                            <h3>CHÂU Á</h3>
+                                            <ul class="ull">
+                                                <li class="item-diem-xp" data-code="BKK">Băng Cốc</li>
+                                                <li class="item-diem-xp" data-code="CAN">Quảng Châu</li>
+                                                <li class="item-diem-xp" data-code="HKG">Hồng Kông</li>
+                                                <li class="item-diem-xp" data-code="KUL">Kuala Lumpur</li>
+                                                <li class="item-diem-xp" data-code="ICN">Seoul, Incheon</li>
+                                                <li class="item-diem-xp" data-code="SHA">Thượng Hải</li>
+                                                <li class="item-diem-xp" data-code="SIN">Singapore</li>
+                                                <li class="item-diem-xp" data-code="TPE">Đài Bắc</li>
+                                                <li class="item-diem-xp" data-code="TYO">Tokyo</li>
+                                                <li class="item-diem-xp" data-code="KOS">Campuchia</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-sm-2 col-md-2" style="padding-left: 20px;">
+                                            <h3>CHÂU ÂU</h3>
+                                            <ul class="ull">
+                                                <li class="item-diem-xp" data-code="AMS">Amsterdam</li>
+                                                <li class="item-diem-xp" data-code="CPH">Cô-pen-ha-gen</li>
+                                                <li class="item-diem-xp" data-code="FRA">Frankfurt</li>
+                                                <li class="item-diem-xp" data-code="LON">London</li>
+                                                <li class="item-diem-xp" data-code="PAR">Paris</li>
+                                                <li class="item-diem-xp" data-code="PRG">Praha</li>
+                                                <li class="item-diem-xp" data-code="STO">Stockholm</li>
+                                                <li class="item-diem-xp" data-code="ZRH">Zurich</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-sm-2 col-md-" style="padding-left: 20px;">
+                                            <h3>CHÂU ÚC &amp; MỸ</h3>
+                                            <ul class="ull">
+                                                <li class="item-diem-xp" data-code="DFW">Dallas</li>
+                                                <li class="item-diem-xp" data-code="HOU">Houston</li>
+                                                <li class="item-diem-xp" data-code="LAX">Los Angeles</li>
+                                                <li class="item-diem-xp" data-code="MEL">Men-bơn</li>
+                                                <li class="item-diem-xp" data-code="NYC">New York</li>
+                                                <li class="item-diem-xp" data-code="SFO">San Francisco</li>
+                                                <li class="item-diem-xp" data-code="SYD">Sydney</li>
+                                                <li class="item-diem-xp" data-code="YTO">Toronto</li>
+                                                <li class="item-diem-xp" data-code="YVR">Vancouver</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Box Hidden -->
+
+                        </div>
+                        <!-- End Điểm đi -->
+
+                        <div class="txc mt10 reverse">
+                            <button class="btn btn-reverse" id="doicho">
+                                <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                                <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                        <!-- Điểm đến -->
+                        <div class="box-diem back-flight">
+                            <div class="box-btn row" id="chondiemden">
+                                <i class="fa fa-plane back-away col-2 col-lg-2  go-away" aria-hidden="true"></i>
+                                <div class="col-10 col-lg-10 row">
+                                    <span class="label-control col-lg-12">Điểm đến</span>
+                                    <button class="btn btn-place bt-diem-den col-lg-12" id="tdd"><span id="text-dd"
+                                            class="txt-ellipse" data-code="LAX" code="LAX">Los Angeles
+                                            (LAX)</span></button>
+                                </div>
+
+                            </div>
+                            <!-- Box Hidden -->
+                            <div class="box-select-option container " id="diemden">
+                                <div class="title hidden-ss">
+                                    <div class="icon-ic"><i class="fa fa-times x-mb" id="x-mo"></i></div>
+                                    <div class="menu-mb"><b class="tt">Chọn điểm đến</b></div>
+                                </div>
+                                <div class="row title hidden-xx">
+                                    <div class="text-text col-12 col-md-10">Lựa chọn thành phố hoặc sân bay đến
+                                    </div>
+                                    <button class="btn col-12 col-md-2 btn-close close1">
+                                        <i id="close-back2" class="fa fa-times hidden-xs icon-xmin"></i>
+                                    </button>
+                                </div>
+                                <div class="div-in-search">
+                                    <div class="div-input-search ui-widget">
+                                        <i class="fa fa-search icon-s" aria-hidden="true"></i>
+                                        <i class="fa fa-times iconX" id="X-t"></i>
+                                        <input type="text" placeholder="Nhập tên thành phố hoặc mã sân bay"
+                                            class="form-control typeahead" id="city-back" value="">
+                                        <button class="btn hidden-xs btn-choice-area" id="chonden">CHỌN</button>
+                                    </div>
+                                </div>
+                                <div class="container" style="padding: 0%;">
+                                    <div class="row scroll-touch" style="margin: 0;">
+                                        <div class="col-12 col-sm-2 col-md-2" style="padding-left: 20px;">
+                                            <h3>MIỀN BẮC</h3>
+                                            <ul class="ull">
+                                                <li class="item-diem-den" data-code="HAN">Hà Nội</li>
+                                                <li class="item-diem-den" data-code="HPH">Hải Phòng</li>
+                                                <li class="item-diem-den" data-code="DIN">Điện Biên Phủ</li>
+                                                <li class="item-diem-den" data-code="VDO">Vân Đồn</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-sm-2 col-md-2" style="padding-left: 20px;">
+                                            <h3>MIỀN NAM</h3>
+                                            <ul class="ull">
+                                                <li class="item-diem-den" data-code="SGN">Hồ Chí Minh</li>
+                                                <li class="item-diem-den" data-code="PQC">Phú Quốc</li>
+                                                <li class="item-diem-den" data-code="CAH">Cà Mau</li>
+                                                <li class="item-diem-den" data-code="VCA">Cần Thơ</li>
+                                                <li class="item-diem-den" data-code="VCS">Côn Đảo</li>
+                                                <li class="item-diem-den" data-code="VKG">Kiên Giang</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-sm-2 col-md-2" style="padding-left: 20px;">
+                                            <h3>MIỀN TRUNG</h3>
+                                            <ul class="ull">
+
+                                                <li class="item-diem-den" data-code="DAD">Đà Nẵng</li>
+                                                <li class="item-diem-den" data-code="CXR">Nha Trang</li>
+                                                <li class="item-diem-den" data-code="DLI">Đà Lạt</li>
+                                                <li class="item-diem-den" data-code="HUI">Huế</li>
+                                                <li class="item-diem-den" data-code="BMV">Ban Mê Thuột</li>
+                                                <li class="item-diem-den" data-code="PXU">PleiKu</li>
+                                                <li class="item-diem-den" data-code="TBB">Phú Yên</li>
+                                                <li class="item-diem-den" data-code="THD">Thanh Hóa</li>
+                                                <li class="item-diem-den" data-code="UIH">Qui Nhơn</li>
+                                                <li class="item-diem-den" data-code="VCL">Chu Lai</li>
+                                                <li class="item-diem-den" data-code="VDH">Quảng Bình</li>
+                                                <li class="item-diem-den" data-code="VII">Vinh</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-sm-2 col-md-2" style="padding-left: 20px;">
+                                            <h3>CHÂU Á</h3>
+                                            <ul class="ull">
+                                                <li class="item-diem-den" data-code="BKK">Băng Cốc</li>
+                                                <li class="item-diem-den" data-code="CAN">Quảng Châu</li>
+                                                <li class="item-diem-den" data-code="HKG">Hồng Kông</li>
+                                                <li class="item-diem-den" data-code="KUL">Kuala Lumpur</li>
+                                                <li class="item-diem-den" data-code="ICN">Seoul, Incheon</li>
+                                                <li class="item-diem-den" data-code="SHA">Thượng Hải</li>
+                                                <li class="item-diem-den" data-code="SIN">Singapore</li>
+                                                <li class="item-diem-den" data-code="TPE">Đài Bắc</li>
+                                                <li class="item-diem-den" data-code="TYO">Tokyo</li>
+                                                <li class="item-diem-den" data-code="KOS">Campuchia</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-sm-2 col-md-2" style="padding-left: 20px;">
+                                            <h3>CHÂU ÂU</h3>
+                                            <ul class="ull">
+                                                <li class="item-diem-den" data-code="AMS">Amsterdam</li>
+                                                <li class="item-diem-den" data-code="CPH">Cô-pen-ha-gen</li>
+                                                <li class="item-diem-den" data-code="FRA">Frankfurt</li>
+                                                <li class="item-diem-den" data-code="LON">London</li>
+                                                <li class="item-diem-den" data-code="PAR">Paris</li>
+                                                <li class="item-diem-den" data-code="PRG">Praha</li>
+                                                <li class="item-diem-den" data-code="STO">Stockholm</li>
+                                                <li class="item-diem-den" data-code="ZRH">Zurich</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-12 col-sm-2 col-md-" style="padding-left: 20px;">
+                                            <h3>CHÂU ÚC &amp; MỸ</h3>
+                                            <ul class="ull">
+                                                <li class="item-diem-den" data-code="DFW">Dallas</li>
+                                                <li class="item-diem-den" data-code="HOU">Houston</li>
+                                                <li class="item-diem-den" data-code="LAX">Los Angeles</li>
+                                                <li class="item-diem-den" data-code="MEL">Men-bơn</li>
+                                                <li class="item-diem-den" data-code="NYC">New York</li>
+                                                <li class="item-diem-den" data-code="SFO">San Francisco</li>
+                                                <li class="item-diem-den" data-code="SYD">Sydney</li>
+                                                <li class="item-diem-den" data-code="YTO">Toronto</li>
+                                                <li class="item-diem-den" data-code="YVR">Vancouver</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Box Hidden -->
+
+                        </div>
+                        <!-- End Điểm đến -->
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 thrtab container">
+                    <div class="title-search">
+                        <span class="text-t"><b class="fs32">2.</b>Thời gian bay</span>
+                    </div>
+
+                    <div class="search-content date-time ">
+                        <!-- Ngày đi -->
+                        <div class=" date-go row">
+                            <i class="fa fa-user icon-gb col-2" aria-hidden="true"></i>
+                            <div class="box-date-select col-8">
+                                <div class="label-control ">Ngày đi</div>
+                                <input class="form-control" id="datepickerDep" name="date_di" placeholder="DD/MM/YYYY"
+                                    type="datetime" readonly="readonly" value="">
+                            </div>
+                            <label class="control-label col-2" for="date_di" id="datepickerD">
+                                <i class="fa fa-calendar icon" aria-hidden="true"></i>
+                            </label>
+                        </div>
+                        <!-- End Ngày đi -->
+
+                        <div class="row return-option">
+                            <div class="fl mr15 col-6" id="motchieu">
+                                <label class="lb-input">
+                                    <input class="" type="radio" name="loai-ve" value="no_return">
+                                    <span class="chieu"><b>Một chiều</b></span>
+                                </label>
+                            </div>
+                            <div class="fl col-6" id="khuhoi">
+                                <label class="lb-input">
+                                    <input class="" type="radio" name="loai-ve" checked="" value="return">
+                                    <span class="chieu"><b>Khứ hồi</b></span>
+                                </label>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                        </div>
+
+                        <!-- Ngày về -->
+                        <div class=" date-return row " id="form-khuhoi">
+                            <i class="fa fa-user icon-gb col-2" aria-hidden="true"></i>
+                            <div class=" box-date-select col-8">
+                                <div class="label-control">Ngày về</div>
+                                <input class="form-control" id="datepickerRet" name="date_ve" placeholder="DD/MM/YYYY"
+                                    type="datetime" readonly="readonly" value="">
+                            </div>
+                            <label class="control-label col-2" for="date_ve" id="datepickerR">
+                                <i class="fa fa-calendar icon" aria-hidden="true"></i>
+                            </label>
+                        </div>
+                        <!-- End Ngày về -->
+
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-4 col-lg-4 thrtab container">
+                    <div class="search-content " style="padding: 0px ;">
+                        <div class="title-search">
+                            <span class="text-t"><b class="fs32">3.</b>Số hành khách</span>
+                        </div>
+                        <div class="div-number row">
+                            <div class="col-4 col-md-4 col-lg-4 m0">
+                                <div class="right">
+                                    <div class="left">
+                                        Người lớn <i class="fa fa-male" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="button-add">
+                                        <input class="minus is-form mn1" value="-">
+                                        <input aria-label="quantity" id="mm-nl" class="input-qty ip-p" max="9" min="1"
+                                            name="" type="number" value="1">
+                                        <input class="plus is-form pl1" value="+">
+                                    </div>
+                                </div>
+                                <div class="left">(12+ tuổi)</div>
+                                <input type="hidden" name="num-adault-xs" id="num-adault-xs" value="1">
+                            </div>
+                            <div class="col-4 col-md-4 col-lg-4 m0">
+                                <div class="right" style="margin-left: 5px;">
+                                    <div class="left">
+                                        Trẻ em <i class="fa fa-child" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="button-add">
+                                        <input class="minus is-form mn2" value="-">
+                                        <input aria-label="quantity" id="mm-te" class="input-qty ip-c" max="9" min="0"
+                                            name="" type="number" value="0">
+                                        <input class="plus is-form pl2" value="+">
+                                    </div>
+                                </div>
+                                <div class="left">(2 - 12 tuổi)</div>
+                                <input type="hidden" name="num-child-xs" id="num-child-xs" value="0">
+                            </div>
+                            <div class="col-4 col-md-4 col-lg-4 m0">
+                                <div class="right" style="margin-left: 5px;">
+                                    <div class="left">
+                                        Em bé <i class="fa fa-universal-access" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="button-add">
+                                        <input class="minus is-form mn3" value="-">
+                                        <input aria-label="quantity" id="mm-eb" class="input-qty ip-b" max="2" min="0"
+                                            name="" type="number" value="0">
+                                        <input class="plus is-form pl3" value="+">
+                                    </div>
+                                </div>
+                                <div class="left">(0 - 2 tuổi)</div>
+                                <input type="hidden" name="num-baby-xs" id="num-baby-xs" value="0">
+                            </div>
+                        </div>
+
+                        <div class="mt5-reset">
+                            <a class="btn btn-tim-ve" href="#">
+                                <i class="fa fa-search" style="margin-right: 5px;" aria-hidden="true"></i>
+                                TÌM CHUYẾN BAY
+                            </a>
+                            <input type="hidden" name="partner" id="partner" value="datacom">
+                            <input type="hidden" name="product_key" id="product_key" value="l498srow836hlem">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content-baohiem" class="ADEBody">
+                <div class="ADEPoint baohiem09"> <label class="label1">Bảo Hiểm</label> <select name="ddlISRType"
+                        id="ddlISRType">
+                        <option selected="selected" value="DOM">Du lịch nội địa</option>
+                        <option value="INT">Du lịch quốc tế</option>
+                    </select> </div>
+                <div class="ADETime">
+                    <div class="ADETimeItem Left"> <label class="label" id="label-noidi">Nơi đi</label>
+                        <select id="ddlISRDeparturePlace"></select>
+                    </div>
+                    <div class="ADETimeItem Right"> <label class="label" id="label-noiden">Nơi đến</label>
+                        <select id="ddlISRArrivalPlace"></select>
+                    </div>
+                </div>
+                <div class="ADETime">
+                    <div class="ADETimeItem Left Left1">
+                        <label class="label" id="label-ngaydi">Ngày đi</label>
+                        <input name="tbISRStartDate" type="text" value="" id="tbISRStartDate" autocomplete="off">
+                    </div>
+                    <div class="ADETimeItem Right Right1">
+                        <label class="label" id="label-ngayve">Ngày về</label>
+                        <input name="tbISREndDate" type="text" value="" id="tbISREndDate" autocomplete="off">
+                    </div>
+                </div>
+                <div class="ADETime">
+                    <div class="ADETimeItem Left Left1"> <label class="label" id="label-danhcho">Dành cho</label>
+                        <select name="ddlISRCusType" id="ddlISRCusType">
+                            <option selected="selected" value="PERSONAL">Cá nhân</option>
+                            <option value="VISITORS">Khách đoàn</option>
+                        </select>
+                    </div>
+                    <div class="ADETimeItem Right Right1"> <label class="label" id="label-songuoi">Số người</label>
+                        <input name="tbCustomerCount" type="number" value="1" id="tbCustomerCount" disabled="disabled"
+                            class="aspNetDisabled" min="1" max="1">
+                    </div>
+                </div>
+                <div class="ADE-btn-tracuu">
+                    <!--<div class="ADEPassengerItem">&nbsp; </div>
+                    <div class="ADEPassengerItem">&nbsp; </div>
+                    <div class="ADEPassengerItem">&nbsp; </div>-->
+                    <div class="ADEPassengerItem1"> <input type="submit" name="btnISRSearch" value="Tra cứu bảo hiểm"
+                            id="btnISRSearch"> </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="vemb.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script src="jquery-ui-1.13.2/jquery-ui.min.js"></script>
+    <script src="select2-4.1.0-rc.0/select2-4.1.0-rc.0/dist/js/select2.full.min.js"></script>
+</body>
